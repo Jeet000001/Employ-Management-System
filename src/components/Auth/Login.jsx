@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 
-const Login = () => {
+const Login = ({handelLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
+    handelLogin(email, password)
     setEmail("");
     setPassword("");
   };
